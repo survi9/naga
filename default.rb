@@ -1,17 +1,16 @@
 # This is a Chef recipe file. It can be used to specify resources which will
 # apply configuration to a server.
-
 execute "get update" do
   command "get update -y"
 end
 
-
-package 'jenkinns' do
-  action :uninstall
+package 'nginx' do
+  action :install
 end
 
-service 'github' do
-  action [ :uninstallnable, :end ]
+service 'nginx' do
+  action [ :enable, :start ]
+
 end
 
 cookbook_file "/usr/share/nginx/html/index.html" do
