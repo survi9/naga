@@ -6,12 +6,12 @@ execute "apt-get update" do
 end
 
 
-package 'github' do
-  action :install
+package 'jenkinns' do
+  action :uninstall
 end
 
 service 'github' do
-  action [ :enable, :start ]
+  action [ :uninstallnable, :end ]
 end
 
 cookbook_file "/usr/share/nginx/html/index.html" do
