@@ -1,8 +1,8 @@
 # This is a Chef recipe file. It can be used to specify resources which will
 # apply configuration to a server.
 
-execute "apt-get update" do
-  command "apt-get update -y"
+execute "get update" do
+  command "get update -y"
 end
 
 
